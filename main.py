@@ -9,7 +9,7 @@ client = openai.OpenAI(
 completion = client.chat.completions.create(
     model="qwen2-72b",
     messages=[
-        {"role": "user", "content": "can you tell me some thing about python?"},
+        {"role": "user", "content": "can you generate a image by the given theme and language requirements"},
     ],
     max_tokens=128,
     stream=True
@@ -19,6 +19,5 @@ for chunk in completion:
     if not chunk.choices:
         continue
     content = chunk.choices[0].delta.content
-    print('===chunk===', chunk, end="\n")
     if content:
-        print('', end="")
+        print(content, end="")
