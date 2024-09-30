@@ -2,6 +2,7 @@ import os
 import base64
 import openai
 import time
+from image import generate_image
 
 # hs
 milliseconds = str(int(time.time() * 1000))
@@ -11,7 +12,7 @@ client = openai.OpenAI(
   api_key="6XN3K2Ydd7kroaDiBE3r0a9KZJWO0suZ"
 )
 
-title='cat'
+title='a beautiful girl'
 lan="英语"
 description = f"讲述一则关于{title}故事，要求120字左右，用词优美，随机生成的不同人物主题，不同故事情节，不需要故事总结，用{lan}输出"
 
@@ -55,3 +56,5 @@ with open(milliseconds + '.mp3', 'wb') as f:
 
 print("\nAudio saved to output.mp3")
 print('finalcontent===>', finalcontent)
+
+generate_image(finalcontent)
