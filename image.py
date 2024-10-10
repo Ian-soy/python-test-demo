@@ -16,7 +16,7 @@ def generate_image():
         steps=30,
         use_refiner=False
     )
-    with open('output_image.png', 'wb') as f:
+    with open('output_image1.png', 'wb') as f:
         f.write(image)
     print("Image saved as output_image.png", image)
 
